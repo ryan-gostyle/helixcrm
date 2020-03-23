@@ -77,7 +77,7 @@ function Login(props) {
                     <input type="checkbox" value="remember-me" /> Remember me
                 </label>
             </div> */}
-            <button className="btn btn-lg btn-success btn-block" type="button" onClick={sampleForm}>Login</button>
+            <button className="btn btn-lg btn-block" className="btn-submit" type="button" onClick={sampleForm}>Login</button>
             <p className="mt-5 mb-3 text-muted text-center">© 2019-2020</p>
         </form> 
     </div>
