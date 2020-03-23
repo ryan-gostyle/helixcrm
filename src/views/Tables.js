@@ -86,6 +86,7 @@ class Tables extends React.Component {
   render() {
     return (
       <Table
+      scroll={{ x: true, y: 550 }}
         columns={columns}
         rowKey={record => record.login.uuid}
         dataSource={this.state.data}

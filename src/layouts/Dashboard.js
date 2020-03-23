@@ -35,7 +35,7 @@ export default class Dashboard extends Component {
         collapsible 
         collapsed={collapsedValue} 
         breakpoint="lg"
-        collapsedWidth="80"
+        collapsedWidth="0"
         onBreakpoint={collapsedValue => {
             // collapsedValue = !collapsedValue;
             // this.state.collapsed = collapsedValue;
@@ -102,8 +102,8 @@ export default class Dashboard extends Component {
           <Content
             className="site-layout-background"
             style={{
-              margin: '24px 16px',
-              padding: 14,
+              margin: '24px 10px',
+              padding: 8,
               minHeight: 280,
             }}
           >
