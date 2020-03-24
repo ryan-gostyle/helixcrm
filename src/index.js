@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
+// import { createBrowserHistory } from "history";
+// import { Router, Route, Switch, Redirect } from "react-router-dom";
 import './index.css';
 import App from './App'
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 // import "assets/scss/paper-dashboard.scss?v=1.1.0";
 import "perfect-scrollbar/css/perfect-scrollbar.css";

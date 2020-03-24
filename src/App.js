@@ -1,12 +1,11 @@
 import React, { useState } from "react"
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-import './floating-labels.css'
 import { AuthContext } from "./variables/Auth";
 import PrivateRoute from './PrivateRoute';
-import Login from './layouts/Login';
+import Login from './views/Login';
 import Admin from './layouts/Admin';
-import Dashboard from './layouts/Dashboard'
+import Dashboard from './layouts/Dashboards'
 
 let AdminLayout = Admin;
 
@@ -24,7 +23,7 @@ function App() {
           <Router>
             <Route path="/" component={Login} exact />
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/dashboard_2" component={AdminLayout} />
+            {/* <Route path="/dashboard_2" component={AdminLayout} /> */}
           </Router>
         </AuthContext.Provider>
       </div>

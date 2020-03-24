@@ -38,3 +38,10 @@
 .site-layout .site-layout-background {
   background: #fff;
 }
+.MuiAppBar-colorPrimary,.MuiButton-containedPrimary {
+  color: #fff;
+  background-color: #00305b !important;
+}
+.MuiTypography-colorPrimary{
+  color: #00305b !important;
+}
