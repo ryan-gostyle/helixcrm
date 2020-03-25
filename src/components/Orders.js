@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react'
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -7,9 +7,20 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
+import axios from 'axios'
 
+export default class Orders extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      datas: true,
+    }
+  }
+  
+  render() {
+    
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
+function createData(id, date, name, shipTo, paymentMethod, amount,) {
   return { id, date, name, shipTo, paymentMethod, amount };
 }
 
@@ -21,20 +32,42 @@ const rows = [
   createData(4, '15 Mar, 2019', 'Bruce Springsteen', 'Long Branch, NJ', 'VISA ⠀•••• 5919', 212.79),
 ];
 
+axios.get('https://randomuser.me/api',
+  {
+    params: {
+      results: 10
+    },
+    responseType: 'json'
+  })
+  .then(function (response) {
+    // handle success
+    console.log(response.data.results);
+    this.setState({
+      data: response.data.results
+    })
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+
+const data = this.state.data
+
 function preventDefault(event) {
   event.preventDefault();
 }
 
-const useStyles = makeStyles((theme) => ({
-  seeMore: {
-    marginTop: theme.spacing(3),
-  },
-}));
-
-export default function Orders() {
-  const classes = useStyles();
-  return (
-    <React.Fragment>
+// const useStyles = makeStyles((theme) => ({
+//   seeMore: {
+//     marginTop: theme.spacing(3),
+//   },
+// }));
+// const classes = useStyles();
+    return (
+      <React.Fragment>
       <Title>Recent Orders</Title>
       <Table size="small">
         <TableHead>
@@ -58,11 +91,16 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
-      <div className={classes.seeMore}>
+      {/* <div className={classes.seeMore}>
         <Link color="primary" href="#" onClick={preventDefault}>
           See more orders
         </Link>
-      </div>
+      </div> */}
     </React.Fragment>
-  );
+    )
+  }
 }
+
+
+
+

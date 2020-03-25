@@ -22,7 +22,7 @@ import { mainListItems, secondaryListItems } from '../variables/ListItems';
 import Chart from '../components/Chart';
 import Deposits from '../components/Deposits';
 import Orders from '../components/Orders';
-
+import MaterialTableDemo from '../views/MaterialTable'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -191,7 +191,13 @@ export default function Dashboard() {
                 <Orders />
               </Paper>
             </Grid>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <MaterialTableDemo />
+              </Paper>
+            </Grid>
           </Grid>
+          
           <Box pt={4}>
             <Copyright />
           </Box>
